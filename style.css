@@ -88,8 +88,14 @@ body {
     background: palegreen;
 }
 .main-container .projects.grid {
-    background: red;
+    background: darksalmon;
     grid-row: 2 / 5;
+
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+}
+.main-container .projects.grid img {
+    width: 50px;
 }
 .main-container .content-header {
     font-weight: 700;
@@ -99,4 +105,8 @@ body {
 }
 .main-container .trending {
     background: paleturquoise;
+}
+.main-container .user-container img {
+    width: 50px;
+
 }
