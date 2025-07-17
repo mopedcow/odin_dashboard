@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body,
 html {
     width: 100%;
@@ -22,40 +21,82 @@ body {
     font-weight: normal;
 
     display: grid;
-    grid-template: 200px 1fr / 250px 1fr;
+    grid-template: 180px 1fr / 250px 1fr;
 }
-
 .header {
-    background: aliceblue;
+    background: salmon;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    padding: 22px 36px 24px 26px;
 }
-.header-search-container img {
-    width: 25px;
+.header-navbar-container,
+.header-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+}
+
+.header .search-bar-container {
+    flex: 3;
+    
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.name-stamp {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+.user-icon-small,
+.user-icon,
+.user-icon img {
+    border-radius: 50%;
+}
+.header .user-icon-small,
+.header .bell,
+.search-button input {
+    width: 26px;
     height: auto;
 }
-.header-nav-container img { /* Placeholder: delete/replace later */
-    width: 50px;
-    height: 50px;
+.search-bar-container input,
+div.search-button {
+    display: inline;
 }
-.header .header-search-container { /* Placeholder: delete/replace later */
-    background: orange;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.search-button input {
+    background: url(image/search.png) no-repeat;
+    background-size: 26px;
+    background-position: 0;
+    border: 0;
 }
-.header .header-nav-container {
-    background: palegoldenrod;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+.search-bar {
+    width: 80%;
+    height: 28px;
+    border: 0;
+    border-radius: 6px;
+}
+.user-icon {
+    width: 70px;
+    height: auto;
 }
 .header-user-content {
-    background: purple;
-    display: grid;
-    grid-template-rows: 1fr auto-fit;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+}
+.header-greeting .greeting {
+    font-size: 1.1rem;
+}
+.header-greeting .user-name {
+    font-family: emily;
+    font-size: 1.4rem;
 }
 .header-user-content img {
     grid-row: 1 / 3;
@@ -63,15 +104,17 @@ body {
     justify-self: end;;
 }
 .header-nav {
-    background: salmon;
-}
-.header-nav ul {
     display: flex;
-    gap: 20px;
+    gap: 18px;
 }
-.header-nav li {
-    display: inline;
+.header-nav button {
+    font-size: 14pt;
+    padding: 10px 26px;
+    border: 0;
+    background-color: turquoise;
+    border-radius: 25px;
 }
+
 .sidebar {
     background: turquoise;
     padding: 36px;
@@ -113,7 +156,6 @@ body {
 .sidebar div ~ div {
     padding-left: 6px;
 }
-
 .main-container {
     background: lightgray;
     display: grid;
@@ -147,10 +189,10 @@ body {
     grid-template-rows: 35px 35px;
     grid-template-columns: 75px 1fr;
 }
-.main-container .user-img {
+.main-container .user-icon {
     grid-row: 1 / 3;
     background: blue;
 }
-.main-container .user-img img {
+.main-container .user-icon img {
     width: 50px;
 }
