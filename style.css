@@ -15,7 +15,6 @@ html {
     font-weight: normal;
   }
 body {
-    background: tomato;
 
     font-family: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
     font-weight: normal;
@@ -157,26 +156,47 @@ div.search-button {
     padding-left: 6px;
 }
 .main-container {
-    background: lightgray;
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 40px 2fr 40px 1fr;
 }
-.main-container .projects {
-    background: palegreen;
+.projects,
+.announcements,
+.trending {
+    padding: 10px 26px;
+}
+.content-header {
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 .main-container .projects.grid {
-    background: darksalmon;
     grid-row: 2 / 5;
 
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-template: repeat(3, auto) / 1fr 1fr;
+    gap: 12px;
+}
+.card {
+    background-color: rgb(255, 215, 114);
+    border-radius: 8px;
+    overflow: hidden;
+    display: grid;
+    grid-template: 100% / 8px auto;
+}
+.stripe {
+    background: salmon;
+}
+.card-content {
+    padding: 12px 26px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: 50px auto 40px;
+}
+.social-btns {
+    justify-self: flex-end;
 }
 .main-container .projects.grid img {
-    width: 50px;
-}
-.main-container .content-header {
-    font-weight: 700;
+    width: 36px;
 }
 .main-container .announcements {
     background: palevioletred;
