@@ -23,7 +23,7 @@ body {
     grid-template: 180px 1fr / 250px 1fr;
 }
 .header {
-    background: salmon;
+    background: lightsalmon;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -57,6 +57,11 @@ body {
 .user-icon img {
     border-radius: 50%;
 }
+.header .user-icon,
+.header .user-icon-small,
+.header-nav button {
+    filter: drop-shadow(2px 2px 4px #c95614);
+}
 .header .user-icon-small,
 .header .bell,
 .search-button input {
@@ -73,7 +78,6 @@ div.search-button {
     background-position: 0;
     border: 0;
 }
-
 .search-bar {
     width: 80%;
     height: 28px;
@@ -113,13 +117,10 @@ div.search-button {
     background-color: turquoise;
     border-radius: 25px;
 }
-
 .sidebar {
     background: turquoise;
     padding: 36px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: #A63D00;
+    font-size: 1.2rem;
 
     grid-row: 1 / 3;
 
@@ -167,9 +168,18 @@ div.search-button {
 .trending {
     margin-top: 20px
 }
+.main-container .content-header {
+    color: #e4af00
+}
 .content-header {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 700;
+}
+.announcements .content-header {
+    color: salmon;
+}
+.trending .content-header {
+    color: darkturquoise;
 }
 .main-container .projects.grid {
     grid-row: 2 / 5;
@@ -180,15 +190,15 @@ div.search-button {
 }
 .card {
     border-radius: 8px;
-    background-color: rgb(255, 215, 114);
 }
 .projects .card {
+    background-color: rgb(255, 215, 114);
     overflow: hidden;
     display: grid;
     grid-template: 100% / 8px auto;
 }
 .stripe {
-    background: salmon;
+    background: lightsalmon;
 }
 .card-content {
     padding: 12px 26px;
@@ -196,35 +206,48 @@ div.search-button {
     grid-auto-flow: row;
     grid-template-rows: 50px auto 40px;
 }
+.card-content h3 {
+    align-self: end;
+}
 .social-btns {
     justify-self: flex-end;
 }
 .main-container .projects.grid img {
     width: 36px;
 }
-.announcements.grid {
+.announcements.grid,
+.trending.grid {
     font-size: .95rem;
     padding: 18px 22px;
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
-.news-item p {
-    margin-top: -2px;
+.announcements.grid {
+    background: lightsalmon;
+}
+.trending.grid {
+    background: turquoise;
 }
 .news-item:not(:last-child) {
     padding-bottom: 16px;
-    border-bottom: 3px dotted black;
+    border-bottom: 3px dotted #ca4a00;
 }
-.main-container .user-container {
+.trending .user-container {
     display: grid;
-    grid-template-rows: 35px 35px;
-    grid-template-columns: 75px 1fr;
+    grid-template-rows: auto auto;
+    grid-template-columns: 75px auto;
 }
-.main-container .user-icon {
+.trending .user-icon {
     grid-row: 1 / 3;
-    background: blue;
+    position: relative;
+    left: -8px;
 }
-.main-container .user-icon img {
-    width: 50px;
+.trending .user-icon img {
+    width: 100%;
+    filter: drop-shadow(2px 2px 5px darkcyan);
+}
+.trending .user-handle {
+    font-weight: 700;
+    align-self: end;
 }
