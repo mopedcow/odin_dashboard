@@ -156,17 +156,19 @@ div.search-button {
     padding-left: 6px;
 }
 .main-container {
+    padding: 0px 30px 32px 28px;
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 40px 2fr 40px 1fr;
+    grid-template-rows: 40px auto 40px auto;
+    column-gap: 16px;
 }
 .projects,
 .announcements,
 .trending {
-    padding: 10px 26px;
+    margin-top: 20px
 }
 .content-header {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 700;
 }
 .main-container .projects.grid {
@@ -177,8 +179,10 @@ div.search-button {
     gap: 12px;
 }
 .card {
-    background-color: rgb(255, 215, 114);
     border-radius: 8px;
+    background-color: rgb(255, 215, 114);
+}
+.projects .card {
     overflow: hidden;
     display: grid;
     grid-template: 100% / 8px auto;
@@ -198,11 +202,19 @@ div.search-button {
 .main-container .projects.grid img {
     width: 36px;
 }
-.main-container .announcements {
-    background: palevioletred;
+.announcements.grid {
+    font-size: .95rem;
+    padding: 18px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
-.main-container .trending {
-    background: paleturquoise;
+.news-item p {
+    margin-top: -2px;
+}
+.news-item:not(:last-child) {
+    padding-bottom: 16px;
+    border-bottom: 3px dotted black;
 }
 .main-container .user-container {
     display: grid;
